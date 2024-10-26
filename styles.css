@@ -25,15 +25,22 @@ body {
 }
 
 .calculating-container {
-    max-width: 1200px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 2rem;
-    
+    border-radius: 12px;
     text-align: center;
     background-color:#373737;
     margin-bottom: 50px;
 }
 
+.analyse-button {
+    padding-bottom: 40px;
+}
+
+.back-home {
+    padding-bottom: 20px;
+}
 /* Main header styles */
 header {
     background-color: #282828;
@@ -110,4 +117,8 @@ p {
 .feature:hover {
     transform: scale(1.05);
     background-color: #373737;
+}
+
+footer {
+    align-content: center;
 }
