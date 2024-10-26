@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Sentiment Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crypto Sentiment Analysis Tool</h1>
+
+        <!-- Input for Cryptocurrency Hashtag -->
+        <div class="input-group">
+            <label for="hashtag">Cryptocurrency Hashtag:</label>
+            <input type="text" id="hashtag" placeholder="#Bitcoin or #Ethereum">
+        </div>
+
+        <!-- Toggle for Transaction Execution -->
+        <div class="input-group">
+            <label for="executeTransaction">Enable Transaction Execution:</label>
+            <input type="checkbox" id="executeTransaction">
+        </div>
+
+        <!-- Analyze Button -->
+        <button onclick="analyzeCrypto()">Analyze</button>
+
+        <!-- Results Display -->
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
