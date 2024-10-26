@@ -1,73 +1,113 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styling for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
+/* Container for main content */
 .container {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #1a73e8;
+.whitespace{
+    padding-top: 20px;
 }
 
-.input-group {
-    margin-bottom: 15px;
+.calculating-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    
+    text-align: center;
+    background-color:#373737;
+    margin-bottom: 50px;
+}
+
+/* Main header styles */
+header {
+    background-color: #282828;
+    color: white;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative; 
+    top: 0;
+    z-index: 1000; 
+}
+
+h1 {
+    font-size: 2rem;
+    color: #61dafb;
+    margin-bottom: 1rem;
+}
+
+/* Subheader and description text */
+p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+/* Buttons styling */
+.cta-button, .crypto-button, .transaction-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #61dafb;
+    color: #1b1b1b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover, .crypto-button:hover, .transaction-button:hover {
+    background-color: #4fc0e8;
+}
+
+/* Feature sections */
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
     text-align: left;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.feature {
+    background-color: #2e2e2e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 30%;
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.feature h3 {
+    font-size: 1.5rem;
+    color: #61dafb;
+    margin-bottom: 1rem;
 }
 
-input[type="checkbox"] {
-    margin-top: 8px;
+.feature p {
+    font-size: 1rem;
+    color: #cccccc;
 }
 
-button {
-    background-color: #1a73e8;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
+.feature {
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
-button:hover {
-    background-color: #155bb5;
-}
-
-#results {
-    margin-top: 20px;
-    font-size: 1.1em;
+.feature:hover {
+    transform: scale(1.05);
+    background-color: #373737;
 }

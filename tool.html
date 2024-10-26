@@ -5,109 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Sentiment Analysis</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0; 
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            position: relative; 
-            top: 0;
-            z-index: 1000; 
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0; 
-            display: flex; 
-        }
-
-        nav ul li {
-            margin: 0 20px; 
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-
-        #results {
-            margin-top: 20px;
-        }
-    </style>
 </head>
 
 <body>
     <header>
-        <h1 style="margin:0;">Crypto Sentiment Analysis Tool</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#analytics">Analytics</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#settings">Settings</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>NotAFinancialAdvisor</h1>
+        </div>
     </header>
-    
-    <div class="container">
+
+    <div class="whitespace"></div>
+
+    <div class="calculating-container">
         <!-- Input for Cryptocurrency Name -->
         <div class="input-group">
             <label for="crypto-name">Cryptocurrency Name:</label>
-            <input type="text" id="crypto-name" placeholder="Bitcoin or Ethereum">
+            <input type="text" id="crypto-name" placeholder="Bitcoin or Ethereum" aria-label="Cryptocurrency Name">
         </div>
 
         <!-- Toggle for Transaction Execution -->
         <div class="input-group">
             <label for="executeTransaction">Enable Transaction Execution:</label>
-            <input type="checkbox" id="executeTransaction">
+            <input type="checkbox" id="executeTransaction" aria-label="Enable Transaction Execution">
         </div>
 
         <!-- Analyze Button -->
-        <button onclick="analyzeCrypto()">Analyse</button>
+        <div class="analyse-button">
+            <button class="cta-button" onclick="analyzeCrypto()">Analyze</button>
+        </div>
 
-        <div>
+        <!-- Back to Home Button -->
+        <div class="back-home">
             <a href="index.html" class="cta-button">Back to Home</a>
         </div>
 
         <!-- Results Display -->
-        <div id="results"></div>
+        <div id="results">Results will appear here after analysis.</div>
     </div>
 
     <script src="script.js"></script>
