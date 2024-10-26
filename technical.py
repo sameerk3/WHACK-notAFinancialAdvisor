@@ -86,5 +86,8 @@ def technical(coin_id):
     # print(f"Overall 7-Day Sentiment: {seven_day_sentiment}")
     return f"{coin_id.capitalize()},{price:<5},{change:<5},{seven_day_sentiment}"
     # name, price, % change, overall sentiment
-    
-print(technical("bitcoin"))
+
+
+
+input_front = ""
+technical(input_front)
