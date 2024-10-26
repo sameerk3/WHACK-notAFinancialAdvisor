@@ -1,4 +1,4 @@
-def technical(name):
+def technical(coin_id):
     import pandas as pd
     import requests
     import numpy as np
@@ -19,7 +19,7 @@ def technical(name):
     cg = CoinGeckoAPI()
 
     # Parameters
-    coin_id = 'bitcoin'  # Replace with the ID of any other coin as needed
+    # coin_id = 'bitcoin'  # Replace with the ID of any other coin as needed
     vs_currency = 'usd'
     days = '7'  # Analyze the last 7 days for trend analysis
 
