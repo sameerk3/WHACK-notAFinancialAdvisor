@@ -74,8 +74,18 @@ main {
 /* Card Header */
 .card-header {
     background-color: #282828;
-    padding: 10px;
-    font-weight: bold;
+    color: white;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative; 
+    top: 0;
+    z-index: 1000; 
+}
+
+h1 {
+    font-size: 2rem;
     color: #61dafb;
 }
 
