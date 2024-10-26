@@ -82,7 +82,7 @@
         async function sendInput() {
             const input = document.getElementById("userInput").value;
 
-            const response = await fetch("http://127.0.0.1:8000/process_input", {
+            const response = await fetch("http://127.0.0.1:8000/endpoint", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
