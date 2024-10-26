@@ -1,8 +1,8 @@
-import pandas as pd
-import requests
-import numpy as np
-from pycoingecko import CoinGeckoAPI
 def technical(name):
+    import pandas as pd
+    import requests
+    import numpy as np
+    from pycoingecko import CoinGeckoAPI
     def get_crypto_ticker(name):
         # Fetch the list of coins from CoinGecko API
         url = "https://api.coingecko.com/api/v3/coins/list"
