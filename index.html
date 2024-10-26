@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Insights</title>
+    <title>NotAFinancialAdvisor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="container">
-            <h1>Crypto Insights</h1>
-            <p>Unlock the power of blockchain investments with AI-driven insights from social media trends.</p>
-            <a href="start.html" class="cta-button">Get Started</a>
-            <a href="tool.html" class="crypto-button">Cryptocurrency</a>
-            <button class="transaction-button">Enable Transactions</button>
+            <h1><span class="colourwhite">not</span>AFinancialAdvisor</h1>
         </div>
     </header>
 
-    <main class="container">
-        <h2>Features</h2>
-        <div class="features">
-            <div class="feature">
-                <h3>Real-time Analysis</h3>
-                <p>Analyse Twitter trends to identify shifts in blockchain sentiment and potential investment opportunities.</p>
-            </div>
-            <div class="feature">
-                <h3>AI-powered Suggestions</h3>
-                <p>Our AI engine parses thousands of tweets to suggest promising investments in specific blockchain assets.</p>
-            </div>
-            <div class="feature">
-                <h3>Customisable Insights</h3>
-                <p>Filter results by blockchain type, timeframe, and trending sentiment for tailored investment insights.</p>
-            </div>
-        </div>
-    </main>
+    <div class="whitespace"></div>
 
-    <footer>
-        <p>&copy; 2024 notAFinancialAdvisor. All Rights Reserved.</p>
-    </footer>
+    <div class="calculating-container">
+        <!-- Input for Cryptocurrency Name -->
+        <div class="input-group">
+            <label for="crypto-name">Cryptocurrency Name:</label>
+            <input type="text" id="crypto-name" placeholder="Bitcoin or Ethereum" aria-label="Cryptocurrency Name">
+        </div>
+
+        <!-- Toggle for Transaction Execution -->
+        <div class="input-group">
+            <label for="executeTransaction">Enable Transaction Execution:</label>
+            <input type="checkbox" id="executeTransaction" aria-label="Enable Transaction Execution">
+        </div>
+
+        <!-- Analyze Button -->
+        <div class="analyse-button">
+            <button class="cta-button" onclick="analyzeCrypto()">Analyze</button>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <a href="index.html" class="cta-button">Back to Home</a>
+        </div>
+
+        <!-- Results Display -->
+        <div id="results">Results will appear here after analysis.</div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
