@@ -4,121 +4,155 @@
     box-sizing: border-box;
 }
 
-/* Basic styling for the page */
+html, body {
+    height: 100%; /* Full height for the HTML and body */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #1b1b1b;
     color: #ffffff;
-    line-height: 1.6;
 }
 
-/* Container for main content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-.whitespace{
-    padding-top: 20px;
-}
-
-.calculating-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    background-color:#373737;
-    margin-bottom: 50px;
-}
-
-.analyse-button {
-    padding-bottom: 40px;
-}
-
-.back-home {
-    padding-bottom: 20px;
-}
-/* Main header styles */
 header {
     background-color: #282828;
-    color: white;
-    padding: 10px 20px; 
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    position: relative; 
-    top: 0;
-    z-index: 1000; 
+    padding: 2rem;
+    text-align: center;
 }
 
-h1 {
-    font-size: 2rem;
+.white-text {
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 3rem;
     color: #61dafb;
-    margin-bottom: 1rem;
 }
 
-/* Subheader and description text */
-p {
+main {
+    flex: 1; /* Allow main to take up the available space */
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: 1fr; /* One column for the grid */
+    max-width: 90%;
+    width: 100%;
+}
+
+/* Flex container for Live Chat and Analysis Tool */
+.flex-container {
+    display: flex; /* Use Flexbox for layout */
+    gap: 20px; /* Space between the cards */
+    width: 100%; /* Full width of the parent grid */
+}
+
+.card_analysis, .card_livechat {
+    flex: 1; /* Allow each card to grow equally */
+    min-height: 250px; /* Maintain minimum height */
+}
+
+/* Card Styles */
+.card_analysis, .card_livechat, .card-wide {
+    background-color: #2e2e2e; /* Dark grey color for cards */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    padding: 1.5rem;
+}
+
+/* Card Header */
+.card-header {
+    background-color: #282828;
+    padding: 10px;
+    font-weight: bold;
+    color: #61dafb;
+}
+
+/* Card Body */
+.card-body {
     font-size: 1.2rem;
     color: #cccccc;
-    margin-bottom: 2rem;
 }
 
-/* Buttons styling */
-.cta-button, .crypto-button, .transaction-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    background-color: #61dafb;
-    color: #1b1b1b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin: 0.5rem;
-    transition: background-color 0.3s ease;
+/* Wide Card */
+.card-wide {
+    grid-column: span 2; /* Ensure wide card spans both columns */
 }
 
-.cta-button:hover, .crypto-button:hover, .transaction-button:hover {
-    background-color: #4fc0e8;
-}
-
-/* Feature sections */
-.features {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3rem;
-    text-align: left;
-}
-
-.feature {
-    background-color: #2e2e2e;
-    padding: 1.5rem;
-    border-radius: 8px;
-    width: 30%;
-}
-
-.feature h3 {
-    font-size: 1.5rem;
-    color: #61dafb;
-    margin-bottom: 1rem;
-}
-
-.feature p {
-    font-size: 1rem;
-    color: #cccccc;
-}
-
-.feature {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-.feature:hover {
-    transform: scale(1.05);
-    background-color: #373737;
-}
-
+/* Footer */
 footer {
-    align-content: center;
+    margin-top: auto; /* Push footer to the bottom */
+    padding: 1.5rem;
+    background-color: #282828; /* Dark grey footer background */
+    color: #666666; /* Medium grey text */
+    text-align: center;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Width of the switch */
+    height: 34px; /* Height of the switch */
+}
+
+.toggle input {
+    display: none; /* Hide the default checkbox */
+}
+
+/* Slider styling */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default background color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    border-radius: 34px; /* Rounded corners */
+}
+
+/* Styling for the toggle "bobble" or ball */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Height of the toggle ball */
+    width: 26px; /* Width of the toggle ball */
+    left: 4px; /* Initial position of the ball */
+    bottom: 4px;
+    background-color: white; /* Ball color */
+    border-radius: 50%; /* Make the ball round */
+    transition: transform 0.3s ease; /* Smooth transition for the ball movement */
+}
+
+/* Active state styling: changes the background and moves the ball */
+input:checked + .slider {
+    background-color: #61dafb; /* Blue color when toggled */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move the ball to the right */
+}
+
+/* Analysis content alignment */
+.analysis-content {
+    text-align: center;
+    margin-top: 10px;
 }

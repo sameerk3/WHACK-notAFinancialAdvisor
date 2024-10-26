@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notAFinancialAdviser Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><span class="white-text">not</span>AFinancialAdviser</h1>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <!-- Flex Container for Live Chat and Analysis Tool -->
+            <div class="flex-container">
+                <!-- Live Chat Section here -->
+                <div class="card_livechat">
+                    <div class="card-header">Live Chat</div>
+                    <div class="card-body">Live Chat</div>
+                </div>
+
+                <!-- Analysis Tool Section-->
+                <div class="card_analysis">
+                    <div class="card-header">Analysis Tool</div>
+                    <div class="card-body">
+                        <div class="toggle-container">
+                            <label class="toggle">
+                                <input type="checkbox" id="toggle-button" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div id="analysis-content" class="analysis-content">
+                            <div id="technical" class="analysis-option">Technical Analysis content goes here.</div>
+                            <div id="sentiment" class="analysis-option" style="display: none;">Sentiment analysis content goes here.</div>
+                        </div>
+
+                        <!-- Integration Code for User Input and Output Display -->
+                        <div class="user-input-section">
+                            <input type="text" id="userInput" placeholder="Enter input">
+                            <button onclick="sendInput()">Submit</button>
+                            <p id="output"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crypto Dashboard Section -->
+            <div class="card-wide">
+                <div class="card-header">Crypto Dashboard</div>
+                <div class="card-body">Crypto Dashboard</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 notAFinancialAdviser. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById("toggle-button");
+        const technicalContent = document.getElementById("technical");
+        const sentimentContent = document.getElementById("sentiment");
+
+        /* let the technical analysis be displayed first */
+        let isTechnical = true;
+
+        toggleButton.addEventListener("change", () => {
+            isTechnical = !isTechnical; // Toggle the state
+            if (isTechnical) {
+                technicalContent.style.display = "block";
+                sentimentContent.style.display = "none";
+                toggleButton.textContent = "Switch to Sentiment Analysis";
+            } else {
+                technicalContent.style.display = "none";
+                sentimentContent.style.display = "block";
+                toggleButton.textContent = "Switch to Technical Analysis";
+            }
+        });
+
+        async function sendInput() {
+            const input = document.getElementById("userInput").value;
+
+            const response = await fetch("http://127.0.0.1:8000/process_input", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ user_input: input })
+            });
+
+            const result = await response.json();
+            document.getElementById("output").innerText = result.output;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
