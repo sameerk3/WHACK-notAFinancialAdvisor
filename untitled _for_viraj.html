@@ -125,13 +125,19 @@
 
             // Access the backend data from result.agent_response
 
-            if (isTechnical){
+            /*if (isTechnical){
                 const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}`;
             } else {
                 const outputText = `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
             }
-            document.getElementById("output").value = outputText;
+            document.getElementById("output").value = outputText;*/
+            const outputText = isTechnical 
+                ? `Technical Analysis: ${result.agent_response.technicalanalysis}` 
+                : `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+                
+            outputArea.value = outputText;
         }
+        
     </script>
 
 </body>
