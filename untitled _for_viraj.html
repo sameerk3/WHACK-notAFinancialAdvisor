@@ -104,23 +104,34 @@
             }
         });
 
-        async function sendInput() {
-            const input = document.getElementById("userInput").value;
 
-            try {
-                const response = await fetch("http://127.0.0.1:8000/endpoint", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ token: input })
-                });
+    document.getElementById("submitButton").addEventListener("click", sendInput);
 
-                if (response.ok) {
-                    const result = await response.json();
-                    console.log("Agent Response:", result);  // Log the entire response to inspect its structure
-        
-                    const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
-                    document.getElementById("output").value = outputText;
-                } else {
-                    document.getElementById("output").value = "Error fetching
+    async function sendInput() {
+        const input = document.getElementById("userInput").value;
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/endpoint", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ token: input })
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log("Agent Response:", result);
+
+                const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+                document.getElementById("output").value = outputText;
+            } else {
+                document.getElementById("output").value = "Error fetching data from the backend.";
+                console.error("Response Error:", response.statusText);
+            }
+        } catch (error) {
+            document.getElementById("output").value = "Failed to connect to the backend.";
+            console.error("Network or Parsing Error:", error);
+        }
+    }
+    </script>
