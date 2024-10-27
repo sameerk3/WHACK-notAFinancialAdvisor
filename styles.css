@@ -229,4 +229,21 @@ input[type="text"]:focus {
     background-color: #282828;
 }
 
+.output-box {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #282828;
+    color: #61dafb; 
+    border-radius: 5px; 
+    border: 1px solid #61dafb;
+    resize: none; 
+    min-height: 50px; 
+    width: 100%; 
+    white-space: pre-wrap; 
+    overflow: auto; 
+}
+
+
+
+
 
