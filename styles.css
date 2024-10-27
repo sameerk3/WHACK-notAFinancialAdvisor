@@ -139,10 +139,14 @@ footer {
     text-align: center;
 }
 
+.toggle-and-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .toggle-container {
     display: flex;
-    justify-content: flex-end; /* Aligns the toggle to the right */
-    margin: 10px 0; /* Margin above and below the toggle */
 }
 
 .toggle {
@@ -191,19 +195,46 @@ input:checked + .slider:before {
 .analysis-content {
     text-align: center;
     margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Align input and button in a single line */
+.input-and-button {
+    display: flex;
+    align-items: center; /* Align vertically centered */
+    gap: 10px; /* Space between the input and button */
+}
+
+/* Make input field and button align in height */
+.user-input-section input[type="text"] {
+    flex: 1; /* Allow input box to grow and fill available space */
+    padding: 8px;
+    font-size: 1rem;
 }
 
 .user-input-section button {
-    background-color: #61dafb;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
     color: #ffffff;
-    border: "none";
-    padding: 15px 10px;
-    font-size: 1.2 rem;
+    background-color: #61dafb;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
 }
+
+/* Styling for output box below the input line */
+.output-box {
+    margin-top: 10px; /* Space above output box */
+    width: 100%; /* Full width */
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #2e2e2e; /* Match with other card backgrounds */
+    color: #ffffff;
+    border: 1px solid #61dafb;
+    border-radius: 5px;
+}
+
 
 .user-input-section button:hover {
     background-color: #57a3d1; /* Slightly darker shade on hover */
@@ -229,19 +260,8 @@ input[type="text"]:focus {
     background-color: #282828;
 }
 
-.output-box {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #282828;
-    color: #61dafb; 
-    border-radius: 5px; 
-    border: 1px solid #61dafb;
-    resize: none; 
-    min-height: 50px; 
-    width: 100%; 
-    white-space: pre-wrap; 
-    overflow: auto; 
-}
+
+
 
 
 
