@@ -13,15 +13,12 @@
 
     <main>
         <div class="grid-container">
-            <!-- Flex Container for Live Chat and Analysis Tool -->
             <div class="flex-container">
-                <!-- Live Chat Section here -->
                 <div class="card_livechat">
                     <div class="card-header">Live Chat</div>
                     <div class="card-body">Live Chat</div>
                 </div>
 
-                <!-- Analysis Tool Section-->
                 <div class="card_analysis">
                     <div class="card-header">Analysis Tool</div>
                     <div class="card-body">
@@ -36,7 +33,6 @@
                             <div id="sentiment" class="analysis-option" style="display: none;">Sentiment analysis content goes here.</div>
                         </div>
 
-                        <!-- Integration Code for User Input and Output Display -->
                         <div class="user-input-section">
                             <input type="text" id="userInput" placeholder="Enter input">
                             <button onclick="sendInput()">Submit</button>
@@ -46,7 +42,6 @@
                 </div>
             </div>
 
-            <!-- Crypto Dashboard Section -->
             <div class="card-wide">
                 <div class="card-header">Crypto Dashboard</div>
                 <div class="card-body">Crypto Dashboard</div>
@@ -63,11 +58,10 @@
         const technicalContent = document.getElementById("technical");
         const sentimentContent = document.getElementById("sentiment");
 
-        /* let the technical analysis be displayed first */
         let isTechnical = true;
 
         toggleButton.addEventListener("change", () => {
-            isTechnical = !isTechnical; // Toggle the state
+            isTechnical = !isTechnical;
             if (isTechnical) {
                 technicalContent.style.display = "block";
                 sentimentContent.style.display = "none";
@@ -96,10 +90,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
