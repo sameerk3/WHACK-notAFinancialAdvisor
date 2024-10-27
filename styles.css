@@ -264,3 +264,31 @@ input[type="text"]:focus {
     color: inherit; /* Keep the color the same as the surrounding text */
     text-decoration: none; /* Remove underline */
 }
+
+.twitter-wrapper {
+    width: 50%; /* Make it responsive */
+    height: 300px; /* Set a height */
+    overflow: hidden; /* Hide overflow by default */
+    border-radius: 5px;
+    transition: overflow 0.3s; /* Smooth transition for overflow change */
+}
+.twitter-wrapper:hover {
+    overflow: auto; /* Show scrollbar when hovered */
+}
+/* Optional: Customize scrollbar appearance */
+.twitter-wrapper::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+.twitter-wrapper::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    
+}
+.twitter-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+}
+
+.card_livechat .twitter-timeline {
+    width: 100%; /* Make it responsive */
+    height: 300px; /* Adjust height as needed */
+    border: none; /* Remove any default border */
+}
