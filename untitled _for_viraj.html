@@ -120,17 +120,18 @@
 
                 if (response.ok) {
                     const result = await response.json();
-                    console.log("Agent Response:", result);
+                    console.log("Agent Response:", result);  // Log the entire response to inspect its structure
         
                     const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
                     document.getElementById("output").value = outputText;
                 } else {
-                    console.error("Response Error:", response.status, response.statusText);
                     document.getElementById("output").value = "Error fetching data from the backend.";
+                    console.error("Response Error:", response.statusText);
                 }
             } catch (error) {
-                console.error("Network or Parsing Error:", error);
                 document.getElementById("output").value = "Failed to connect to the backend.";
+                console.error("Network or Parsing Error:", error);
+    }
     }
 }
 
