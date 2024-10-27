@@ -84,7 +84,6 @@
 
         document.addEventListener("DOMContentLoaded", loadCryptoData);
 
-
         const toggleButton = document.getElementById("toggle-button");
         const technicalContent = document.getElementById("technical");
         const sentimentContent = document.getElementById("sentiment");
@@ -104,34 +103,39 @@
             }
         });
 
+        async function sendInput() {
+            const input = document.getElementById("userInput").value;
 
-    document.getElementById("submitButton").addEventListener("click", sendInput);
+            try {
+                const response = await fetch("http://127.0.0.1:8000/endpoint", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ token: input })
+                });
 
-    async function sendInput() {
-        const input = document.getElementById("userInput").value;
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log("Agent Response:", result);  // Log the entire response to inspect its structure
 
-        try {
-            const response = await fetch("http://127.0.0.1:8000/endpoint", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ token: input })
-            });
+                    // Access the backend data and format it for display
+                    const technicalAnalysis = result.agent_response.technicalanalysis;
+                    const sentimentAnalysis = result.agent_response.sentimentanalysis;
 
-            if (response.ok) {
-                const result = await response.json();
-                console.log("Agent Response:", result);
-
-                const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
-                document.getElementById("output").value = outputText;
-            } else {
-                document.getElementById("output").value = "Error fetching data from the backend.";
-                console.error("Response Error:", response.statusText);
+                    const outputText = `Technical Analysis: ${technicalAnalysis}\nSentiment Analysis: ${sentimentAnalysis}`;
+                    document.getElementById("output").value = outputText;
+                } else {
+                    document.getElementById("output").value = "Error fetching data from the backend.";
+                    console.error("Response Error:", response.statusText);
+                }
+            } catch (error) {
+                document.getElementById("output").value = "Failed to connect to the backend.";
+                console.error("Network or Parsing Error:", error);
             }
-        } catch (error) {
-            document.getElementById("output").value = "Failed to connect to the backend.";
-            console.error("Network or Parsing Error:", error);
         }
-    }
+
     </script>
+
+</body>
+</html>
