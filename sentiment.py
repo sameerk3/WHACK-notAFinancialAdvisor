@@ -122,7 +122,7 @@ def sentiment(name):
         # print("============================================")
         # print(f"Cumulative Sentiment Score: {cumulative_score}")
         # print(f"Overall 7-Day Sentiment: {seven_day_sentiment}")
-        return seven_day_sentiment
+        return "The Sentiment is "+ seven_day_sentiment
 
     # Run the analysis for Bitcoin (or any other cryptocurrency)
     try:
