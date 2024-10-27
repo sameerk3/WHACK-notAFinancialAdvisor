@@ -109,23 +109,31 @@
         async function sendInput() {
             const input = document.getElementById("userInput").value;
 
-            const response = await fetch("http://127.0.0.1:8000/endpoint", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ token: input })
-            });
+            try {
+                const response = await fetch("http://127.0.0.1:8000/endpoint", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ token: input })
+                });
 
-            if (response.ok) {
-                const result = await response.json();
-                // Combine the technical and sentiment analysis into a single output
-                const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
-                document.getElementById("output").value = outputText;
-            } else {
-                document.getElementById("output").value = "Error fetching data from the backend.";
-            }
-        }
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log("Agent Response:", result);
+        
+                    const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+                    document.getElementById("output").value = outputText;
+                } else {
+                    console.error("Response Error:", response.status, response.statusText);
+                    document.getElementById("output").value = "Error fetching data from the backend.";
+                }
+            } catch (error) {
+                console.error("Network or Parsing Error:", error);
+                document.getElementById("output").value = "Failed to connect to the backend.";
+    }
+}
+
     </script>
 
 </body>
