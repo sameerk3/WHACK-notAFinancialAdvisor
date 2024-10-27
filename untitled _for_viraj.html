@@ -122,6 +122,7 @@
             });
 
             const result = await response.json();
+            console.log("Backend Response:", result);
             // Display the technical and sentiment analysis in the output textarea
             const outputText = `Technical Analysis: ${result.technicalanalysis}\nSentiment Analysis: ${result.sentimentanalysis}`;
             document.getElementById("output").value = outputText;
