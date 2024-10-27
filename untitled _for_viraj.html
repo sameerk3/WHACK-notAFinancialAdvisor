@@ -117,8 +117,14 @@
                 body: JSON.stringify({ token: input })
             });
 
-            const result = await response.json();
-            document.getElementById("output").innerText = result.output;
+            if (response.ok) {
+                const result = await response.json();
+                // Combine the technical and sentiment analysis into a single output
+                const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+                document.getElementById("output").value = outputText;
+            } else {
+                document.getElementById("output").value = "Error fetching data from the backend.";
+            }
         }
     </script>
 
