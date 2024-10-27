@@ -260,10 +260,7 @@ input[type="text"]:focus {
     background-color: #282828;
 }
 
-
-
-
-
-
-
-
+.crypto-card .ticker a {
+    color: inherit; /* Keep the color the same as the surrounding text */
+    text-decoration: none; /* Remove underline */
+}
