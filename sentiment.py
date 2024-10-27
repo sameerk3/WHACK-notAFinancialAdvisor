@@ -24,7 +24,7 @@ def sentiment(name):
     bearish_keywords = ["decline", "drop", "fall", "loss", "decrease", "bearish"]
 
     # Function to fetch recent news articles for the cryptocurrency
-    def fetch_crypto_news(coin_name, api_key="a79b195d7f9249eda6def81ff7e7c7c8"):
+    def fetch_crypto_news(coin_name, api_key="ed64763f1b01428a919bef116ada159f"):
         url = f"https://newsapi.org/v2/everything?q={coin_name}&sortBy=publishedAt&apiKey={api_key}"
         response = requests.get(url)
         if response.status_code == 200:
@@ -110,7 +110,7 @@ def sentiment(name):
         # print("Date       | Headline                                         | Sentiment")
         # print("-----------|--------------------------------------------------|----------")
         for i, row in df.iterrows():
-            if i == 98:
+            if i == 70:
                 finalheadline1 = row['headline'][:80]
             elif i == 99:
                 finalheadline2 = row['headline'][:80]
@@ -130,5 +130,3 @@ def sentiment(name):
     except Exception as err:
         print("Error:", err)
 
-input_front = ""
-sentiment(input_front)

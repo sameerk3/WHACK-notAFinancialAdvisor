@@ -71,7 +71,7 @@ def technical(coin_id):
     # print("-----------|-------------|------------------|----------------------")
 
     for i, row in df.iterrows():
-        if i == 168:
+        if i == 140:
             date = row['timestamp'].strftime('%Y-%m-%d')
             price = f"${row['price']:.2f}"
             change = f"{row['daily_price_change']:.2f}%"
@@ -88,6 +88,3 @@ def technical(coin_id):
     # name, price, % change, overall sentiment
 
 
-
-input_front = ""
-technical(input_front)

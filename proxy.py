@@ -14,7 +14,10 @@ async def agent_query(req):
     response = await query(destination=AGENT_ADDRESS, message=req, timeout=15)
     if isinstance(response, Envelope):
         data = json.loads(response.decode_payload())
-        return data["sentimentanalysis",'technicalanalysis']
+        return {
+            "sentimentanalysis": data.get("sentimentanalysis"),
+            "technicalanalysis": data.get("technicalanalysis")
+        }
     return response
 
 app = FastAPI()
@@ -35,7 +38,10 @@ def read_root():
 async def make_agent_call(req: Request):
     model = TokenNameRequest.parse_obj(await req.json())
     try:
+        # Call the agent query function and get the result
         res = await agent_query(model)
-        return f"successful call - agent response: {res}"
-    except Exception:
-        return "unsuccessful agent call"
+        # Return a structured JSON response
+        return {"status": "successful call", "agent_response": res}
+    except Exception as e:
+        # Return a JSON error message if an exception occurs
+        return {"status": "unsuccessful agent call", "error": str(e)}
