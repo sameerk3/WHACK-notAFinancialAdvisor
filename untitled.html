@@ -79,7 +79,9 @@
 
                 cryptoCard.innerHTML = `
                     <div class="name">${coin.name}</div>
-                    <div class="ticker">(${coin.symbol.toUpperCase()})</div>
+                    <div class="ticker">
+                        (<a href="https://www.coingecko.com/en/coins/${coin.id}" target="_blank">${coin.symbol.toUpperCase()}</a>)
+                    </div>
                     <div class="price">Price: $${coin.current_price.toLocaleString()}</div>
                     <div class="${changeClass}">Change: ${coin.price_change_percentage_1h_in_currency.toFixed(2)}%</div>
                 `;
@@ -128,5 +130,3 @@
 
 </body>
 </html>
-
-
