@@ -122,7 +122,9 @@
             });
 
             const result = await response.json();
-            document.getElementById("output").innerText = result.output;
+            // Display the technical and sentiment analysis in the output textarea
+            const outputText = `Technical Analysis: ${result.technicalanalysis}\nSentiment Analysis: ${result.sentimentanalysis}`;
+            document.getElementById("output").value = outputText;
         }
     </script>
 
