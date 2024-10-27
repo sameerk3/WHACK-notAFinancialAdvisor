@@ -87,7 +87,7 @@
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ user_input: input })
+                body: JSON.stringify({ token: input })
             });
 
             const result = await response.json();
