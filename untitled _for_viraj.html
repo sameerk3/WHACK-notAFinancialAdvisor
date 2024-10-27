@@ -124,7 +124,12 @@
             const result = await response.json();
 
             // Access the backend data from result.agent_response
-            const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}\nSentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+
+            if (isTechnical){
+                const outputText = `Technical Analysis: ${result.agent_response.technicalanalysis}`;
+            } else {
+                const outputText = `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+            }
             document.getElementById("output").value = outputText;
         }
     </script>
