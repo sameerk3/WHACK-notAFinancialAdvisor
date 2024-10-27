@@ -26,3 +26,8 @@ function analyzeCrypto() {
         }
     }, 2000);
 }
+
+function runScript() {
+    const button = document.getElementById("runScriptButton");
+        button.style.display = "none";
+}

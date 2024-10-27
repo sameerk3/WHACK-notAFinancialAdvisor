@@ -3,9 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+.run-script-btn {
+    padding: 10px 20px;            /* Button padding */
+    bottom: 20px;
+    font-size: 16px;               /* Button font size */
+    background-color: #4CAF50;     /* Button background color */
+    color: white;                  /* Button text color */
+    border: none;                  /* Remove border */
+    border-radius: 5px;           /* Rounded corners */
+    cursor: pointer;               /* Pointer cursor on hover */
+    position: fixed;            /* Positioning the button */
+    right: 20px;                  /* Right margin from the edge of the header */
+}
 
 html, body {
     height: 100%;
+}
+
+.run-script-btn{
+    background-color: #29c5f0 ;
+    color: white;
+    border-radius: 5px;
 }
 
 body {
@@ -29,6 +47,9 @@ header {
 header h1 {
     font-size: 3rem;
     color: #61dafb;
+    margin: 0;                     /* Remove default margin */
+    flex: 1;                       /* Allow h1 to take up remaining space */
+    text-align: center; 
 }
 
 main {

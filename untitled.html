@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1><span class="white-text">not</span>AFinancialAdviser</h1>
+        <button id="runScriptButton" class="run-script-btn" onclick="runScript()">Recieve 100 TESTFETs</button>
     </header>
 
     <main>
@@ -125,6 +126,23 @@
 
             const result = await response.json();
             document.getElementById("output").innerText = result.output;
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("runScriptButton").onclick = runScript;
+        });
+
+        async function runScript() {
+            try {
+                const response = await fetch("http://127.0.0.1:8000/run-script", {
+                    method: "POST"
+                });
+                const result = await response.json();
+                alert(result.message); // Alert message when script starts
+            } catch (error) {
+                console.error("Error running script:", error);
+            }
         }
     </script>
 
