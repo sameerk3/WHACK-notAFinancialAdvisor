@@ -84,7 +84,7 @@ def technical(coin_id):
     # print("============================================")
     # print(f"Cumulative Sentiment Score: {cumulative_score}")
     # print(f"Overall 7-Day Sentiment: {seven_day_sentiment}")
-    return f"{coin_id.capitalize()},{price:<5},{change:<5},{seven_day_sentiment}"
+    return f"Name: {coin_id.capitalize()}, Price: {price:<5}, Change in Price: {change:<5}, Sentiment: {seven_day_sentiment}"
     # name, price, % change, overall sentiment
 
 
