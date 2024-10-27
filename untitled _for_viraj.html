@@ -131,11 +131,14 @@
                 const outputText = `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
             }
             document.getElementById("output").value = outputText;*/
-            const outputText = isTechnical 
-                ? `Technical Analysis: ${result.agent_response.technicalanalysis}` 
-                : `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+
+            if(toggleButton.checked){
+                outputBox.value = `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
                 
-            outputArea.value = outputText;
+            }else{
+                outputBox.value = `Technical Analysis: ${result.agent_response.technicalanalysis}`;
+            }
+
         }
         
     </script>
