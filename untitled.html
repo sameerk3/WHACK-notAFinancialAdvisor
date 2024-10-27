@@ -30,8 +30,8 @@
                                         <span class="slider"></span>
                                     </label>
                                 </div>
-                                <div id="technical" class="analysis-option">Technical Analysis content goes here.</div>
-                                <div id="sentiment" class="analysis-option" style="display: none;">Sentiment Analysis content goes here.</div>
+                                <div id="technical" class="analysis-option">Technical Analysis </div>
+                                <div id="sentiment" class="analysis-option" style="display: none;">Sentiment Analysis </div>
                             </div>
                         </div>
 
@@ -124,9 +124,17 @@
             });
 
             const result = await response.json();
-            document.getElementById("output").innerText = result.output;
+
+            // Access the backend data from result.agent_response
+            const outputTextTechnical = `Technical Analysis: ${result.agent_response.technicalanalysis}`;
+            const outputTextSentiment = `Sentiment Analysis: ${result.agent_response.sentimentanalysis}`;
+            document.getElementById("output").value = outputText;
+
         }
+
+        
     </script>
 
 </body>
 </html>
+
