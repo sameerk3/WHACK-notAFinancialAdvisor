@@ -4,16 +4,16 @@
     box-sizing: border-box;
 }
 .run-script-btn {
-    padding: 10px 20px;            /* Button padding */
+    padding: 10px 20px;            
     bottom: 20px;
-    font-size: 16px;               /* Button font size */
-    background-color: #4CAF50;     /* Button background color */
-    color: white;                  /* Button text color */
-    border: none;                  /* Remove border */
-    border-radius: 5px;           /* Rounded corners */
-    cursor: pointer;               /* Pointer cursor on hover */
-    position: fixed;            /* Positioning the button */
-    right: 20px;                  /* Right margin from the edge of the header */
+    font-size: 16px;              
+    background-color: #4CAF50;    
+    color: white;                  
+    border: none;                
+    border-radius: 5px;          
+    cursor: pointer;              
+    position: fixed;         
+    right: 20px;                 
 }
 
 html, body {
@@ -47,8 +47,8 @@ header {
 header h1 {
     font-size: 3rem;
     color: #61dafb;
-    margin: 0;                     /* Remove default margin */
-    flex: 1;                       /* Allow h1 to take up remaining space */
+    margin: 0;                    
+    flex: 1;                      
     text-align: center; 
 }
 
@@ -89,7 +89,7 @@ main {
 
 .card-header {
     background-color: #282828;
-    color: #61dafb; /* Updated to match the webpage title color */
+    color: #61dafb; 
     padding: 10px 20px; 
     display: flex;
     justify-content: space-between; 
@@ -145,11 +145,11 @@ h1 {
 }
 
 .crypto-card .change-positive {
-    color: #00FF00; /* Green for positive change */
+    color: #00FF00;
 }
 
 .crypto-card .change-negative {
-    color: #FF0000; /* Red for negative change */
+    color: #FF0000; 
 }
 
 footer {
@@ -222,13 +222,13 @@ input:checked + .slider:before {
 /* Align input and button in a single line */
 .input-and-button {
     display: flex;
-    align-items: center; /* Align vertically centered */
-    gap: 10px; /* Space between the input and button */
+    align-items: center; 
+    gap: 10px; 
 }
 
-/* Make input field and button align in height */
+
 .user-input-section input[type="text"] {
-    flex: 1; /* Allow input box to grow and fill available space */
+    flex: 1; 
     padding: 8px;
     font-size: 1rem;
 }
@@ -244,13 +244,12 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-/* Styling for output box below the input line */
 .output-box {
-    margin-top: 10px; /* Space above output box */
-    width: 100%; /* Full width */
+    margin-top: 10px; 
+    width: 100%; 
     padding: 10px;
     font-size: 1rem;
-    background-color: #2e2e2e; /* Match with other card backgrounds */
+    background-color: #2e2e2e; 
     color: #ffffff;
     border: 1px solid #61dafb;
     border-radius: 5px;
@@ -258,11 +257,11 @@ input:checked + .slider:before {
 
 
 .user-input-section button:hover {
-    background-color: #57a3d1; /* Slightly darker shade on hover */
+    background-color: #57a3d1; 
 }
 
 .user-input-section button:focus {
-    outline: none; /* Remove default outline on focus */
+    outline: none;
 }
 
 input[type="text"] {
@@ -282,34 +281,34 @@ input[type="text"]:focus {
 }
 
 .crypto-card .ticker a {
-    color: inherit; /* Keep the color the same as the surrounding text */
-    text-decoration: none; /* Remove underline */
+    color: inherit; 
+    text-decoration: none; 
 }
 
 .twitter-wrapper {
-    width: 50%; /* Make it responsive */
-    height: 300px; /* Set a height */
-    overflow: hidden; /* Hide overflow by default */
+    width: 50%; 
+    height: 300px; 
+    overflow: hidden; 
     border-radius: 5px;
-    transition: overflow 0.3s; /* Smooth transition for overflow change */
+    transition: overflow 0.3s;
 }
 .twitter-wrapper:hover {
-    overflow: auto; /* Show scrollbar when hovered */
+    overflow: auto;
 }
-/* Optional: Customize scrollbar appearance */
+
 .twitter-wrapper::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px; 
 }
 .twitter-wrapper::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
+    background: #888;
     
 }
 .twitter-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker color on hover */
+    background: #555;
 }
 
 .card_livechat .twitter-timeline {
-    width: 100%; /* Make it responsive */
-    height: 300px; /* Adjust height as needed */
-    border: none; /* Remove any default border */
+    width: 100%;
+    height: 300px;
+    border: none; 
 }
