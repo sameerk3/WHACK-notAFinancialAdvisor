@@ -5,7 +5,7 @@ from uagents.envelope import Envelope
 from uagents.query import query
 from fastapi.middleware.cors import CORSMiddleware
 
-AGENT_ADDRESS = "agent1qt64qk2au36sk9hrglz929yh0pw6vhk5ysm8ln09hv7axpps376jsxwjr07"
+AGENT_ADDRESS = "redacted"
 
 class TokenNameRequest(Model):
     token: str
