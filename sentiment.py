@@ -24,7 +24,7 @@ def sentiment(name):
     bearish_keywords = ["decline", "drop", "fall", "loss", "decrease", "bearish"]
 
     # Function to fetch recent news articles for the cryptocurrency
-    def fetch_crypto_news(coin_name, api_key="ed64763f1b01428a919bef116ada159f"):
+    def fetch_crypto_news(coin_name, api_key="redacted"):
         url = f"https://newsapi.org/v2/everything?q={coin_name}&sortBy=publishedAt&apiKey={api_key}"
         response = requests.get(url)
         if response.status_code == 200:
@@ -39,14 +39,14 @@ def sentiment(name):
     def analyze_sentiment_vader(text):
         sentiment_score = analyzer.polarity_scores(text)['compound']
         
-        # Keyword adjustments for financial context, now with a smaller adjustment factor
+        # Keyword adjustments for financial context
         for word in bullish_keywords:
             if word in text.lower():
-                sentiment_score += 0.2  # Smaller influence
+                sentiment_score += 0.2 
                 break
         for word in bearish_keywords:
             if word in text.lower():
-                sentiment_score -= 0.5  # Smaller influence
+                sentiment_score -= 0.5  
                 break
 
         # Updated thresholds for bullish/bearish sentiment
@@ -86,16 +86,15 @@ def sentiment(name):
         # Calculate cumulative sentiment score over the last 7 days
         cumulative_score = daily_sentiment['daily_sentiment_score'].sum()
 
-        # Narrow down the final sentiment interpretation based on cumulative score
-    # Revised cumulative sentiment interpretation function with higher bullish thresholds
+
         def interpret_cumulative_sentiment(score):
-            if score >= 10:  # Higher boundary for Strongly Bullish
+            if score >= 10:  
                 return 'Strongly Bullish'
-            elif 5 <= score < 10:  # Higher boundary for Bullish
+            elif 5 <= score < 10: 
                 return 'Bullish'
-            elif -2 < score < 5:  # Broaden Neutral range
+            elif -2 < score < 5:  
                 return 'Neutral'
-            elif -4 < score <= -2:  # Higher boundary for Bearish
+            elif -4 < score <= -2:  
                 return 'Bearish'
             else:
                 return 'Strongly Bearish'
