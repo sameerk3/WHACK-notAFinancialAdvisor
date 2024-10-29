@@ -19,7 +19,6 @@ def technical(coin_id):
     cg = CoinGeckoAPI()
 
     # Parameters
-    # coin_id = 'bitcoin'  # Replace with the ID of any other coin as needed
     vs_currency = 'usd'
     days = '7'  # Analyze the last 7 days for trend analysis
 
@@ -77,7 +76,6 @@ def technical(coin_id):
             change = f"{row['daily_price_change']:.2f}%"
             score = row['daily_sentiment_score']
             sentiment = 'Bullish' if score == 1 else 'Bearish' if score == -1 else 'Neutral'
-            # print(f"{date} | {price:<10} | {change:<16} | {sentiment}")
 
     # Final output: Overall sentiment based on the cumulative score
     # print("\nSummary of the 7-Day Sentiment Analysis:")
