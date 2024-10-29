@@ -20,10 +20,3 @@ def top10func():
             '24h Change (%)': coin.get('price_change_percentage_24h')
         })
     return strs
-
-    #.name,ticker,currentPrice,%change
-    
-    
-    # # Convert data to DataFrame for easy display
-    # top_coins_df = pd.DataFrame(top_coins_data)
-    # print(top_coins_df)
