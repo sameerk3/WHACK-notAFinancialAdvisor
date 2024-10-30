@@ -1,6 +1,10 @@
 # WHACK notAFinancialAdvisor
  Codebase for the notAFinancialAdvisor project for Warwick HACK
 
+
+https://github.com/user-attachments/assets/63680002-7777-4727-afd9-ae87a16d8815
+
+
 ## Inspiration
 As a team of four computer science students, we're driven by the transformative potential of blockchain and cryptocurrency to reshape and decentralize the global economy. We see a future where decentralization not only empowers individuals but also redefines traditional finance, making it more accessible, transparent, and equitable for everyone.
 Our goal is to develop a platform that offers comprehensive and user-friendly insights into the cryptocurrency market, tailored especially for newcomers and curious investors. By leveraging cutting-edge technologies, we aim to demystify the complexities of the crypto world, enabling users to make informed decisions and engage with the blockchain ecosystem confidently. With our combined knowledge and enthusiasm, we're committed to building a tool that bridges the gap between innovation and accessibility in the crypto space.
